@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="az_appointment_info" inherit_id="appointment.appointment_info">
+        <xpath expr="//h4[hasclass('pb-3')]" position="after">
+            <div t-if="state in ['failed-sync']" class="alert alert-danger" role="alert">
+                <p>
+                    <strong>No se ha podido agendar la cita</strong>
+                </p>
+                <p class="mb-0">
+                    Por favor, intentelo de nuevo.
+                </p>
+            </div>
+        </xpath>
+    </template>
+</odoo>

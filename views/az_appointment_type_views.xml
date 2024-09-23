@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="az_appointment_type_view_form_inherit" model="ir.ui.view">
+        <field name="name">appointment.type.view.form.inherit</field>
+        <field name="model">appointment.type</field>
+        <field name="inherit_id" ref="appointment.appointment_type_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//group[@name='question_form_right']" position="inside">
+                <field name="for_appointment_connection"/>
+                <field name="identifier" required="for_appointment_connection" invisible="not for_appointment_connection" placeholder="fecha_nac"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

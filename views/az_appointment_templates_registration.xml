@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="az_appointment_form" inherit_id="appointment.appointment_form">
+        <xpath expr="//form[hasclass('appointment_submit_form')]//label[@for='name']" position="replace">
+            <label class="col-sm-3 col-form-label fw-normal" for="name">Nombre(s)*</label>
+        </xpath>
+        <xpath expr="//form[hasclass('appointment_submit_form')]//label[@for='email']" position="replace">
+            <label class="col-sm-3 col-form-label fw-normal" for="email">Email</label>
+        </xpath>
+        <xpath expr="//form[hasclass('appointment_submit_form')]//input[@name='email']" position="replace">
+            <input type="email" class="form-control" name="email"
+                t-att-value="'email' in partner_data and partner_data['email']"
+                placeholder="e.g. john.smith@example.com"/>
+        </xpath>
+        <xpath expr="//form[hasclass('appointment_submit_form')]//div[hasclass('row','mb-4')][1]" position="after">
+            <div class="row mb-4">
+                <label class="col-sm-3 col-form-label fw-normal" for="father_surname">Apellido paterno*</label>
+                <div class="col-sm-9">
+                    <input type="char" class="form-control" name="father_surname" required="1" placeholder="e.g. Garcia"/>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <label class="col-sm-3 col-form-label fw-normal" for="mother_surname">Apellido materno*</label>
+                <div class="col-sm-9">
+                    <input type="char" class="form-control" name="mother_surname" required="1" placeholder="e.g. Fernandez"/>
+                </div>
+            </div>
+        </xpath>
+    </template>
+</odoo>
